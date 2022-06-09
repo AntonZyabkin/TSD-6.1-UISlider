@@ -23,6 +23,8 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberOfSound
+        coverImageView.image
 
     }
 
@@ -33,12 +35,23 @@ class PlayerViewController: UIViewController {
         animateView (sender)
     }
     @IBAction func playButtonAction(_ sender: UIButton) {
+        playPauseButton (button: sender)
         animateView (sender)
+
     }
     @IBAction func nextButtonAction(_ sender: UIButton) {
         animateView (sender)
     }
     @IBAction func mixButtonAction(_ sender: UIButton) {
         animateView (sender)
+    }
+    
+    
+    //MARK: - @objc methods
+    
+    @objc func changeSlider (sender: UISlider) {
+        if sender == trackPositionOutlet {
+            player.currentTime = TimeInterval(sender.value)
+        }
     }
 }

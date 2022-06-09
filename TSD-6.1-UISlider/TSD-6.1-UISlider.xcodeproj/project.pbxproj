@@ -19,6 +19,7 @@
 		E8DCA0D3284B6C44000596ED /* bazaru-net.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DCA0CF284B6C44000596ED /* bazaru-net.mp3 */; };
 		E8DCA0D4284B6C44000596ED /* velik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DCA0D0284B6C44000596ED /* velik.mp3 */; };
 		E8DCA0D5284B6C44000596ED /* puding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DCA0D1284B6C44000596ED /* puding.mp3 */; };
+		E8DCA0D7284F586D000596ED /* PlayerMadel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCA0D6284F586D000596ED /* PlayerMadel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E8DCA0CF284B6C44000596ED /* bazaru-net.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bazaru-net.mp3"; sourceTree = "<group>"; };
 		E8DCA0D0284B6C44000596ED /* velik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = velik.mp3; sourceTree = "<group>"; };
 		E8DCA0D1284B6C44000596ED /* puding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = puding.mp3; sourceTree = "<group>"; };
+		E8DCA0D6284F586D000596ED /* PlayerMadel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMadel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				E8DCA0B9284B61B2000596ED /* ViewController.swift */,
 				E8DCA0C9284B6218000596ED /* PlayerViewController.swift */,
 				E8DCA0CB284B6262000596ED /* Model.swift */,
+				E8DCA0D6284F586D000596ED /* PlayerMadel.swift */,
 				E8DCA0BB284B61B2000596ED /* Main.storyboard */,
 				E8DCA0BE284B61B3000596ED /* Assets.xcassets */,
 				E8DCA0C0284B61B3000596ED /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				E8DCA0BA284B61B2000596ED /* ViewController.swift in Sources */,
 				E8DCA0CA284B6218000596ED /* PlayerViewController.swift in Sources */,
 				E8DCA0B6284B61B2000596ED /* AppDelegate.swift in Sources */,
+				E8DCA0D7284F586D000596ED /* PlayerMadel.swift in Sources */,
 				E8DCA0B8284B61B2000596ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
