@@ -7,11 +7,10 @@
 
 import Foundation
 import UIKit
-import AVKit
 import AVFoundation
 
 
-var numberOfSound = 0
+var numberOfSound: Int = 0 
 
 //MARK: - variables
 

@@ -10,8 +10,8 @@ import AVFoundation
 import UIKit
 
 
-let player = AVAudioPlayer ()
-var position = 0
+var player = AVAudioPlayer ()
+var position = 1
 
 
 
@@ -20,7 +20,7 @@ var position = 0
 
 
 //MARK: - funcs
-
+//при нажатии на клавишу пауза/плей сменяется имейдж кнопки
 func playPauseButton (button: UIButton) {
     if position == 0 {
         player.play()
@@ -34,3 +34,5 @@ func playPauseButton (button: UIButton) {
         print(position)
     }
 }
+
+

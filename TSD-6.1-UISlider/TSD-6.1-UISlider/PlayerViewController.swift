@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayerViewController: UIViewController {
     @IBOutlet weak var SoundNameLabel: UILabel!
@@ -23,9 +24,18 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        numberOfSound
-        coverImageView.image
+        coverImageView.image = UIImage(named: imagesArray[numberOfSound])
+        SoundNameLabel.text = soundTracksArray[numberOfSound]
+        
+        trackPositionOutlet.minimumValue = 0
+        trackPositionOutlet.maximumValue = 100
+        trackPositionOutlet.isContinuous = false
+        trackPositionOutlet.addTarget(self, action: #selector(changeSlider), for: UIControl.Event.valueChanged)
 
+        startPlayer ()
+        
+        
+        
     }
 
     @IBAction func realMixButtonAction(_ sender: UIButton) {
@@ -33,6 +43,15 @@ class PlayerViewController: UIViewController {
     }
     @IBAction func baforeButtonAction(_ sender: UIButton) {
         animateView (sender)
+        if numberOfSound > 3 {
+            numberOfSound = 0
+        } else if numberOfSound < 0 {
+            numberOfSound = 3
+        } else {
+            numberOfSound -= 1
+        }
+        startPlayer ()
+        
     }
     @IBAction func playButtonAction(_ sender: UIButton) {
         playPauseButton (button: sender)
@@ -41,9 +60,19 @@ class PlayerViewController: UIViewController {
     }
     @IBAction func nextButtonAction(_ sender: UIButton) {
         animateView (sender)
+        if numberOfSound > 2 {
+            numberOfSound = 0
+        } else if numberOfSound < 1 {
+            numberOfSound = 3
+        } else { numberOfSound += 1
+        }
+        startPlayer ()
     }
     @IBAction func mixButtonAction(_ sender: UIButton) {
         animateView (sender)
+    }
+    @IBAction func soundTrackSliderAction(_ sender: UISlider) {
+        player.volume = trackPositionOutlet.value
     }
     
     
@@ -53,5 +82,20 @@ class PlayerViewController: UIViewController {
         if sender == trackPositionOutlet {
             player.currentTime = TimeInterval(sender.value)
         }
+        print ("somth")
+    }
+    
+    
+    
+    func startPlayer () {
+        do {
+            if let audioPath = Bundle.main.path(forResource: soundTracksArray[numberOfSound], ofType: "mp3") {
+                try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
+                soundValueOutlet.maximumValue = Float(player.duration)
+            }
+        } catch {
+            print("ERROR ujdyj")
+        }
+        player.play()
     }
 }

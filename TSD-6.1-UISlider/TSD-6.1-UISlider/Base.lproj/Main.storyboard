@@ -40,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwj-Ql-6Da">
                                 <rect key="frame" x="38" y="83" width="338" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="34"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,6 +51,9 @@
                                 <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
                                 <color key="maximumTrackTintColor" systemColor="systemGray5Color"/>
                                 <color key="thumbTintColor" red="1" green="0.63863517950137527" blue="0.67937377156945034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="soundTrackSliderAction:" destination="Oe1-mg-Ysj" eventType="valueChanged" id="IDR-Iv-svu"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIU-my-BeI">
                                 <rect key="frame" x="180" y="637" width="51" height="53"/>
@@ -59,7 +62,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="">
-                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="pause" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="playButtonAction:" destination="Oe1-mg-Ysj" eventType="touchUpInside" id="J80-my-bWi"/>
@@ -191,7 +194,7 @@
     <resources>
         <image name="backward.frame.fill" catalog="system" width="128" height="93"/>
         <image name="forward.frame.fill" catalog="system" width="128" height="93"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="pause" catalog="system" width="88" height="128"/>
         <image name="repeat" catalog="system" width="128" height="98"/>
         <image name="shuffle" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">

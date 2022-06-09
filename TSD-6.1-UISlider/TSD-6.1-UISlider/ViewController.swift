@@ -37,25 +37,21 @@ class ViewController: UIViewController {
     @objc func goToPlayerVC1 () {
         goEnterVC(vC: self)
         numberOfSound = 0
-        print(numberOfSound)
     }
 
     @objc func goToPlayerVC2 () {
         goEnterVC(vC: self)
         numberOfSound = 1
-        print(numberOfSound)
     }
     
     @objc func goToPlayerVC3 () {
         goEnterVC(vC: self)
         numberOfSound = 2
-        print(numberOfSound)
     }
     
     @objc func goToPlayerVC4 () {
         goEnterVC(vC: self)
         numberOfSound = 3
-        print(numberOfSound)
     }
 
 
