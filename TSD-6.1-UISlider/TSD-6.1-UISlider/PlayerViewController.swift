@@ -156,6 +156,7 @@ class PlayerViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print (repeatTrack)
         if repeatTrack {
@@ -163,6 +164,11 @@ class PlayerViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             nextTrack()
         }
+    }
+    
+    // останавливает воспроизведение песни при возврате на экран списка песен
+    override func viewWillDisappear(_ animated: Bool) {
+        player.stop()
     }
 }
 

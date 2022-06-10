@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="69.642857142857139"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Title-->
         <scene sceneID="YjM-Ku-k7c">
             <objects>
                 <viewController storyboardIdentifier="PlayerViewController" id="Oe1-mg-Ysj" customClass="PlayerViewController" customModule="TSD_6_1_UISlider" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,6 +156,9 @@
                         <viewLayoutGuide key="safeArea" id="EEm-XX-ibQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="IoK-R4-fK6"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SoundNameLabel" destination="mwj-Ql-6Da" id="Jcg-EY-jam"/>
                         <outlet property="beforeButtonOunlet" destination="VgQ-u3-RHd" id="ZNX-12-3Uj"/>
