@@ -13,6 +13,7 @@ import UIKit
 var player = AVAudioPlayer ()
 var position = 1
 
+var repeatTrack = false
 
 
 
@@ -32,5 +33,6 @@ func playPauseButton (button: UIButton) {
         position = 0
     }
 }
+
 
 

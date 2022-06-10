@@ -156,13 +156,7 @@
                         <viewLayoutGuide key="safeArea" id="EEm-XX-ibQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BgE-EG-1TN">
-                        <connections>
-                            <outlet property="titleView" destination="siI-jk-jDe" id="T6I-Ms-MuB"/>
-                        </connections>
-                    </navigationItem>
                     <connections>
-                        <outlet property="NavItemOutlet" destination="BgE-EG-1TN" id="ZTV-qX-DqV"/>
                         <outlet property="SoundNameLabel" destination="mwj-Ql-6Da" id="Jcg-EY-jam"/>
                         <outlet property="beforeButtonOunlet" destination="VgQ-u3-RHd" id="ZNX-12-3Uj"/>
                         <outlet property="coverImageView" destination="xim-jy-311" id="zKK-MD-78n"/>
@@ -178,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYj-nW-66P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3676.811594202899" y="69.642857142857139"/>
+            <point key="canvasLocation" x="1690" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xhf-Tt-tMQ">
