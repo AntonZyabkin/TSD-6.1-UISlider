@@ -108,6 +108,9 @@
                                 <color key="minimumTrackTintColor" systemColor="systemGray2Color"/>
                                 <color key="maximumTrackTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="volumeSliderAction:" destination="Oe1-mg-Ysj" eventType="valueChanged" id="kcA-WO-0uD"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="end" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqC-Uj-vej">
                                 <rect key="frame" x="352" y="549" width="48" height="37"/>

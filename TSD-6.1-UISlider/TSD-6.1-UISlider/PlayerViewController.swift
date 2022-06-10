@@ -24,16 +24,17 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coverImageView.image = UIImage(named: imagesArray[numberOfSound])
-        SoundNameLabel.text = soundTracksArray[numberOfSound]
+        
         
         trackPositionOutlet.minimumValue = 0
         trackPositionOutlet.maximumValue = 100
+        soundValueOutlet.minimumValue = 0.0
+        soundValueOutlet.maximumValue = 1.0
         trackPositionOutlet.isContinuous = false
         trackPositionOutlet.addTarget(self, action: #selector(changeSlider), for: UIControl.Event.valueChanged)
 
         startPlayer ()
-        
+        player
         
         
     }
@@ -43,9 +44,7 @@ class PlayerViewController: UIViewController {
     }
     @IBAction func baforeButtonAction(_ sender: UIButton) {
         animateView (sender)
-        if numberOfSound > 3 {
-            numberOfSound = 0
-        } else if numberOfSound < 0 {
+        if numberOfSound < 1 {
             numberOfSound = 3
         } else {
             numberOfSound -= 1
@@ -53,24 +52,26 @@ class PlayerViewController: UIViewController {
         startPlayer ()
         
     }
+
+    @IBAction func nextButtonAction(_ sender: UIButton) {
+        animateView (sender)
+        if numberOfSound > 2 {
+            numberOfSound = 0
+        } else { numberOfSound += 1
+        }
+        startPlayer ()
+    }
+    
     @IBAction func playButtonAction(_ sender: UIButton) {
         playPauseButton (button: sender)
         animateView (sender)
 
     }
-    @IBAction func nextButtonAction(_ sender: UIButton) {
-        animateView (sender)
-        if numberOfSound > 2 {
-            numberOfSound = 0
-        } else if numberOfSound < 1 {
-            numberOfSound = 3
-        } else { numberOfSound += 1
-        }
-        startPlayer ()
-    }
+    
     @IBAction func mixButtonAction(_ sender: UIButton) {
         animateView (sender)
     }
+    
     @IBAction func soundTrackSliderAction(_ sender: UISlider) {
         player.volume = trackPositionOutlet.value
     }
@@ -82,7 +83,11 @@ class PlayerViewController: UIViewController {
         if sender == trackPositionOutlet {
             player.currentTime = TimeInterval(sender.value)
         }
-        print ("somth")
+    }
+    
+    
+    @IBAction func volumeSliderAction(_ sender: UISlider) {
+        player.volume = soundValueOutlet.value
     }
     
     
@@ -91,11 +96,17 @@ class PlayerViewController: UIViewController {
         do {
             if let audioPath = Bundle.main.path(forResource: soundTracksArray[numberOfSound], ofType: "mp3") {
                 try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
-                soundValueOutlet.maximumValue = Float(player.duration)
+                trackPositionOutlet.maximumValue = Float(player.duration)
+                trackPositionOutlet.value = Float(player.currentTime)
             }
         } catch {
             print("ERROR ujdyj")
         }
         player.play()
+        coverImageView.image = UIImage(named: imagesArray[numberOfSound])
+        SoundNameLabel.text = soundTracksArray[numberOfSound]
+        trackPositionOutlet.value = 0
+        playButtonOunlet.setImage(UIImage(systemName: "pause"), for: .normal)
+        position = 1
     }
 }

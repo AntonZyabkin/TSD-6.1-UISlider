@@ -26,12 +26,10 @@ func playPauseButton (button: UIButton) {
         player.play()
         button.setImage(UIImage(systemName: "pause"), for: .normal)
         position = 1
-        print(position)
     } else {
         player.pause()
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
         position = 0
-        print(position)
     }
 }
 
