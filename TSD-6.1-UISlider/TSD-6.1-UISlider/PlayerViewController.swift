@@ -22,9 +22,12 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var trackPositionOutlet: UISlider!
     @IBOutlet weak var soundValueOutlet: UISlider!
     
+    @IBOutlet weak var NavItemOutlet: UINavigationItem!
+    var timer : Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
         
         trackPositionOutlet.minimumValue = 0
         trackPositionOutlet.maximumValue = 100
@@ -34,7 +37,8 @@ class PlayerViewController: UIViewController {
         trackPositionOutlet.addTarget(self, action: #selector(changeSlider), for: UIControl.Event.valueChanged)
 
         startPlayer ()
-        player
+        print (player.currentTime)
+        
         
         
     }
@@ -108,5 +112,19 @@ class PlayerViewController: UIViewController {
         trackPositionOutlet.value = 0
         playButtonOunlet.setImage(UIImage(systemName: "pause"), for: .normal)
         position = 1
+    }
+    @objc func updateTime () {
+        trackPositionOutlet.value = Float(player.currentTime)
+        
+        let curentTime = player.currentTime
+        let minutes = Int(curentTime/60)
+        let seconds = Int (curentTime.truncatingRemainder(dividingBy: 60))
+        secGoneLabel.text = NSString(format: "%02d:%02d", minutes, seconds) as String
+        
+        let leftTime = player.currentTime - player.duration
+        let minutesLeft = Int (leftTime/60)
+        let secondsLeft = Int (-leftTime.truncatingRemainder(dividingBy: 60))
+        secLeftLabel.text = NSString(format: "%02d:%02d", minutesLeft, secondsLeft) as String
+
     }
 }
